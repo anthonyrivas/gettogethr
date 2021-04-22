@@ -1,9 +1,9 @@
-const {Router} = require('express');
-const {router: html} = require('./html.js');
-const {router: api} = require('./api.js');
+const { Router } = require('express');
+const { htmlRouter } = require('./html');
+const { apiRouter } = require('./api');
 
 const router = Router();
-router.use('/api', api);
-router.use('/', html);
+router.use('/api', apiRouter);
+router.use('/', htmlRouter);
 
-module.exports = {router}
+module.exports = { router }
